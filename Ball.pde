@@ -31,13 +31,23 @@ public class Ball {
       }
     }
     else if(x>xb2-size/2) {
+      if(y>yb2 && y<yb2+hb2) { 
+        dx*=-1;
+      }
+      //case when ball collides upper corner of right bar
       if(Math.sqrt((x-xb2)*(x-xb2)+(y-yb2)*(y-yb2))<=size/2) {
         dx*=-1;
-        dy*=-1;
+        //changes y speed only when head-on to corner
+        if(dy>0) {
+          dy*=-1;
+        } 
       }
       else if(Math.sqrt((x-xb2)*(x-xb2)+(y-yb2-hb2)*(y-yb2-hb2))<=size/2) {
         dx*=-1;
-        dy*=-1;
+        //changes speed of y only when head-on to corner
+        if(dy<0) {
+          dy*=-1;
+        }
       }
     }
     if(x==xb1+wb1+size/2) {
@@ -46,13 +56,22 @@ public class Ball {
       }
     }
     if(x<xb1+wb1+size/2) {
+      if(y<yb2+hb2 && y>yb2) {
+        dx*=-1;
+      }
       if(Math.sqrt((x-xb1-wb1)*(x-xb1-wb1)+(y-yb1)*(y-yb1))<=size/2) {
         dx*=-1;
-        dy*=-1;
+        //changes y speed only when head-on to corner
+        if(dy>0) {
+          dy*=-1;
+        } 
       }
       else if(Math.sqrt((x-xb1-wb1)*(x-xb1-wb1)+(y-yb1-hb1)*(y-yb1-hb1))<=size/2) {
         dx*=-1;
-        dy*=-1;
+        //changes y speed only when head-on to corner
+        if(dy<0) {
+          dy*=-1;
+        } 
       }
     }
     if(x>640-size/2){
