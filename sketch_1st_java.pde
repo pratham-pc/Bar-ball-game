@@ -1,12 +1,21 @@
-int x=100;
-int y=50;
+Ball ball1=new Ball(100 , 400 ,1 , 3 , 50);
+Ball ball2=new Ball(300 , 200 , 1 , 5 , 100);
+Bar bar1= new Bar(600 , 100 , 10 , 40);
+Bar bar2=new Bar(50 ,100 , 10, 40);
+
 void setup() {
   size(640 , 480);
 }
 void draw() {
-  background(155);
-  ellipse(x, y , 50 ,100);
-  x=(x+1)%640+1;
-  
+  background(0);
+  ball1.display();
+  ball1.moveUpDown();
+  ball1.moveRL(bar2 , bar1);
+  ball2.display();
+  ball2.moveUpDown();
+  ball2.moveRL(bar2 , bar1);
+  ball1.checkCollision(ball2);
+  bar1.display();
+  bar2.display();
   
 }
