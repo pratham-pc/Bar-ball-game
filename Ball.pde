@@ -24,10 +24,41 @@ public class Ball {
     y=y+dy;
   }
   public void moveRL(Bar bar1 , Bar bar2) {
-    if(x>bar2.getX()-size/2 && y>bar2.getY() && y<bar2.getY()+bar2.getht()) {
+    int xb1=bar1.getX() , xb2=bar2.getX() , yb1=bar1.getY() , yb2=bar2.getY() , wb1=bar1.getwd() , hb1=bar1.getht() , hb2=bar2.getht() , wb2=bar2.getwd();
+    if(x==xb2-size/2) {
+      if(y>yb2 && y<yb2+hb2) { 
+        dx*=-1;
+      }
+    }
+    else if(x>xb2-size/2) {
+      if(Math.sqrt((x-xb2)*(x-xb2)+(y-yb2)*(y-yb2))<=size/2) {
+        dx*=-1;
+        dy*=-1;
+      }
+      else if(Math.sqrt((x-xb2)*(x-xb2)+(y-yb2-hb2)*(y-yb2-hb2))<=size/2) {
+        dx*=-1;
+        dy*=-1;
+      }
+    }
+    if(x==xb1+wb1+size/2) {
+      if(y<yb2+hb2 && y>yb2) {
+        dx*=-1;
+      }
+    }
+    if(x<xb1+wb1+size/2) {
+      if(Math.sqrt((x-xb1-wb1)*(x-xb1-wb1)+(y-yb1)*(y-yb1))<=size/2) {
+        dx*=-1;
+        dy*=-1;
+      }
+      else if(Math.sqrt((x-xb1-wb1)*(x-xb1-wb1)+(y-yb1-hb1)*(y-yb1-hb1))<=size/2) {
+        dx*=-1;
+        dy*=-1;
+      }
+    }
+    if(x>640-size/2){
       dx*=-1;
     }
-    if(x<bar1.getX()+bar1.getwd()+size/2) {
+    else if(x<size/2) {
       dx*=-1;
     }
     x=x+dx;

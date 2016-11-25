@@ -1,7 +1,7 @@
-Ball ball1=new Ball(100 , 400 ,1 , 3 , 50);
-Ball ball2=new Ball(300 , 200 , 1 , 5 , 100);
-Bar bar1= new Bar(600 , 100 , 10 , 40);
-Bar bar2=new Bar(50 ,100 , 10, 40);
+Ball ball1=new Ball(100 , 400 ,10 , 10 , 50);
+Ball ball2=new Ball(300 , 200 , 10 , 10 , 100);
+Bar bar1= new Bar(500 , 100 , 10 , 100);
+Bar bar2=new Bar(100 ,100 , 10, 100);
 
 void setup() {
   size(640 , 480);

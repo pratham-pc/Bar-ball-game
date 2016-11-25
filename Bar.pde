@@ -23,5 +23,5 @@ public class Bar {
   }
   public int getht() {
     return ht;
-  }
+  }  
 }
