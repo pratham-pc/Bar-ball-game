@@ -1,13 +1,15 @@
-Ball ball1=new Ball(100 , 400 ,10 , 10 , 50);
-Ball ball2=new Ball(300 , 200 , 10 , 10 , 100);
-Bar bar1= new Bar(500 , 100 , 10 , 100);
-Bar bar2=new Bar(100 ,100 , 10, 100);
+Ball ball1=new Ball(200 , 400 ,9 , 3 , 50);
+Ball ball2=new Ball(300 , 200 , 10 , 15 , 100);
+Bar bar1= new Bar(630 , 00 , 10 , 640 , 3);
+Bar bar2=new Bar(0 ,00 , 10, 640 , 2);
 
 void setup() {
   size(640 , 480);
 }
 void draw() {
   background(0);
+  bar1.moveUpDown(ball1 , ball2);
+  bar2.moveUpDown(ball1 , ball2);
   ball1.display();
   ball1.moveUpDown();
   ball1.moveRL(bar2 , bar1);

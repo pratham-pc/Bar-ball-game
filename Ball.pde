@@ -30,7 +30,7 @@ public class Ball {
         dx*=-1;
       }
     }
-    else if(x>xb2-size/2) {
+    else if(x>xb2-size/2 && x<xb2+wb2+size/2) {
       if(y>yb2 && y<yb2+hb2) { 
         dx*=-1;
       }
@@ -55,7 +55,7 @@ public class Ball {
         dx*=-1;
       }
     }
-    if(x<xb1+wb1+size/2) {
+    if(x<xb1+wb1+size/2 && x>xb1-size/2) {
       if(y<yb2+hb2 && y>yb2) {
         dx*=-1;
       }
@@ -110,10 +110,14 @@ public class Ball {
     size1=ball.getSize();
     double d=Math.sqrt((x-x1)*(x-x1) + (y-y1)*(y-y1));
     if(d<(size1+size)/2) {
-      ball.changeDy();
-      ball.changeDx();
-      this.changeDy();
-      this.changeDx();
+      if(ball.getDy()*this.getDy()<0) {
+        ball.changeDy();
+        this.changeDy();
+      }
+      if(ball.getDx()*this.getDx()<0) {
+        ball.changeDx();
+        this.changeDx();
+      }
     }
   }
 }
